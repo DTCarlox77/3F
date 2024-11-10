@@ -1,0 +1,15 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}
+Iniciar sesión
+{% endblock title %}
+
+{% block body %}
+<h1>Inicio de sesión</h1>
+<form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Nombre de usuario">
+    <input type="password" name="password" placeholder="Contraseña">
+    <button type="submit">Inicar sesión</button>
+</form>
+{% endblock body %}

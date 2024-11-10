@@ -1,0 +1,23 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}
+3F
+{% endblock title %}
+
+{% block body %}
+<h1>Proyecto 3F</h1>
+
+
+{% if user.is_authenticated %}
+<h1>Bienvenido, {{ user.username }}</h1>
+<ul>
+    <li><a href="{% url 'logout_view' %}">Cerrar sesión</a></li>
+</ul>
+{% else %}
+<ul>
+    <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+    <li><a href="{% url 'register' %}">Registrarse</a></li>
+</ul>
+{% endif %}
+
+{% endblock body %}
