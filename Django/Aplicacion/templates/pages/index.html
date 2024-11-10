@@ -1,0 +1,27 @@
+{% extends "layouts/layout.html" %}
+{% load static %}
+
+{% block head %}
+    <script src="{% static 'javascript/script.js' %}"></script>
+{% endblock head %}
+
+{% block title %}
+Mi página en Django
+{% endblock title %}
+
+{% block body %}
+
+{% comment %}
+{% include "components/navbar.html" %}
+{% endcomment %}
+
+<h1>Hola Mundo desde Django</h1>
+<button id="boton" class="btn btn-outline-primary">Dar un saludo</button>
+
+
+{% comment %}
+{% include "components/footer.html" %}
+{% endcomment %}
+    
+
+{% endblock body %}

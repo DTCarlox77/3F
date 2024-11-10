@@ -1,0 +1,32 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}
+Formulario
+{% endblock title %}
+
+{% block body %}
+<h1>Página de Formulario</h1>
+
+<form action="{% url 'formulario' %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="nombre" placeholder="Nombre de la Fruta">
+    <input type="number" name="precio" placeholder="Precio de la Fruta">
+    <textarea name="descripcion" id="" placeholder="Descripción"></textarea>
+
+    <button type="submit">Enviar datos</button>
+
+</form>
+
+<h1>Listado de frutas</h1>
+{% for fruta in frutas %}
+<a href="{% url 'especifica' id=fruta.id %}">
+    <div>
+        <h1>{{ fruta.nombre }}</h1>
+        <h2>Precio: {{ fruta.precio }}$</h2>
+        <p>{{ fruta.descripcion }}</p>
+    </div>
+</a>
+{% endfor %}
+
+
+{% endblock body %}

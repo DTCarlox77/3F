@@ -1,0 +1,24 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}
+{{ fruta.nombre }}
+{% endblock title %}
+
+{% block body %}
+<h1>{{ fruta.nombre }}</h1>
+<h2>Precio de: {{ fruta.precio }} $</h2>
+
+<h1>Descripción</h1>
+<p>{{ fruta.descripcion }}</p>
+
+<a href="{% url 'eliminar' id=fruta.id %}">
+    <button>Eliminar esta fruta</button>
+</a>
+
+<h1>Cambiar información</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input name="nombre" type="text" value="{{ fruta.nombre }}">
+    <button type="submit">Actualizar información</button>
+</form>
+{% endblock body %}

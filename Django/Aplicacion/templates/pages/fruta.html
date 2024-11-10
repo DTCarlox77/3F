@@ -1,0 +1,24 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}
+Página de Frutas
+{% endblock title %}
+
+{% block body %}
+<h1>Página de frutas</h1>
+
+<h1>{{ nombre }}</h1>
+
+{% if nombre != "María" %}
+    <h1>Esta es la página para María</h1>
+{% else %}
+    <h1>Esta es la página para Yanelis</h1>
+{% endif %}
+
+<ul>
+    {% for color in colores %}
+        <li>{{ color }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock body %}
